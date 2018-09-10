@@ -2,6 +2,8 @@
 
 package org.json.simple.parser;
 
+import java.math.BigDecimal;
+
 class Yylex {
 
   /** This character denotes the end of file */
@@ -601,9 +603,10 @@ int getPosition(){
         case 12: 
           { sb.append('\\');
           }
-        case 32: break;
-        case 21: 
-          { Double val=Double.valueOf(yytext()); return new Yytoken(Yytoken.TYPE_VALUE, val);
+        case 32:
+        case 21: {
+          BigDecimal val = new BigDecimal(yytext());
+          return new Yytoken(Yytoken.TYPE_VALUE, val);
           }
         case 33: break;
         case 1: 
