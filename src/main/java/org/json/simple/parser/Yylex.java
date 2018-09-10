@@ -607,7 +607,7 @@ int getPosition(){
         case 21:
           { BigDecimal val = new BigDecimal(yytext()); return new Yytoken(Yytoken.TYPE_VALUE, val);
           }
-        case 33:
+        case 33: break;
         case 1:
           { throw new ParseException(yychar, ParseException.ERROR_UNEXPECTED_CHAR, new Character(yycharat(0)));
           }
